@@ -99,5 +99,29 @@ class DecimalMinutes(DecimalDegree):
        
         DecimalDegree.__init__(self, long, lat)  
         
+class DegreesMinutesSeconds:
+    '''takes degrees, minutes, and seconds as and converts them to other formats'''
+    def __init__(self , long, lat):
+        self.longdeg = long[0]
+        self.longmin = long[1]
+        self.longsec = long[2]
         
-
+        self.latdeg = lat[0]
+        self.latmin = lat[1]
+        self.latsec = lat[2] 
+        
+    def dd(self):
+        if self.longdeg < 0:
+            long_scaler = -1
+        else:
+            long_scaler = 1
+        if self.latdeg < 0:
+            lat_scaler = -1
+        else:
+            lat_scaler = 1
+        
+        return (long_scaler * round(abs(self.longdeg) + self.longmin/60 + self.longsec/3600,6)),(lat_scaler * round(abs(self.latdeg) + self.longmin/60 + self.longsec/3600,6))
+    
+    def dm(self):
+        return (self.longdeg, round(self.longmin + self.longsec/3600,8)), (self.latdeg, round(self.latmin + self.latsec/3600, 8))
+    

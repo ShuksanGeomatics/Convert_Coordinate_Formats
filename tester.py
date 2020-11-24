@@ -57,6 +57,12 @@ try:
 		print(coords.lat_sec)
 		print(coords.long_dec_min)
 		print(coords.lat_dec_min)	
+		
+		
+		coords =ConvertDegreeFormats.DegreesMinutesSeconds((-122, 40, 23.5),(48, 55,25))
+		print(coords.dd())
+		print(coords.dm())
+		
 except:
 	tb = sys.exc_info()[2]
 	tbinfo = traceback.format_tb(tb)[0]
