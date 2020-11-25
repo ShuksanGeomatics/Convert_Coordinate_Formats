@@ -1,10 +1,14 @@
-Convert_Coordinate_Formats
+convert_degree_formats
 Converts degrees, minutes, seconds, or degrees with decimal minutes to different formats and data types.
 
 This scripts contains two classes to convert between common ways to represent degrees, minutes, and seconds.
 Inputs must be longitude followed by latitude. Inputs can be a pair of decimal degrees or two tuples for degrees with decimal minutes.
 
 ---To convert from decimal degrees use....
+
+#import module...
+import convert_degree_formats
+#Create a DecimalDegree object...
 coords = DecimalDegree(-122.953, 48.955)
 
 ---To convert from degrees with decimal minutes use...
